@@ -1,0 +1,57 @@
+/* ***************************************
+Website Name: Kansha Hibachi Express
+Author: Wanda Azhar 
+Author Email: wandaazhar@gmail.com
+website: https://wandaazhar.vercel.app/
+Version: 1.0
+Date Release: June-16-2023
+Description: This website is designed based on Grid System. and fully responsive layout. It fits perfectly on various displays and resolutions from regular desktop screens to tablets, iPads, iPhones, and small mobile devices.
+***************************************
+
+CSS TABLE OF CONTENTS
+===================================
+01. GLOBAL CSS 
+02. HOME PAGE
+03. ABOUT US PAGE
+04. MENU PAGE
+05. CONTACT PAGE
+06. BLOG DETAILS PAGE
+07. MENU DETAILS PAGE
+08. CART VIEW PAGE
+09. CHECKOUT PAGE
+10. SIGN IN PAGE
+11. PAYMENT PAGE
+12. FAQ PAGE
+13. TERMS AND CONDITION PAGE
+14. 404 PAGE
+15. DASHBOARD PAGE
+
+================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&family=Oleo+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
+
+::root {
+  --colorYellow: #FFE473;
+  --colorOrange: #FE7C14;
+  --colorRed: #eb0029;
+  --colorGrey: #acacac;
+  --paraColor: #484747;
+  /* --colorBlue: #231f40; */
+  --colorBlue: #00274C;
+  --colorWhite: #ffffff;
+  --paraFont: 'Manrope', sans-serif;
+  --headingFont: 'Barlow', sans-serif;
+  --cursiveFont: 'Oleo Script', cursive;
+  --karla: 'Karla';
+  --boxShadow: rgba(100, 100, 111, 0.15) 0px 7px 29px 0px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+*::selection {
+  background-color: var(--colorYellow);
+  color: var(--colorBlue);
+}

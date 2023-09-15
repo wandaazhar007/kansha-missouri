@@ -1,0 +1,443 @@
+/* ***************************************
+Website Name: Kansha Hibachi Express
+Author: Wanda Azhar 
+Author Email: wandaazhar@gmail.com
+website: https://wandaazhar.vercel.app/
+Version: 1.0
+Date Release: June-16-2023
+Description: This website is designed based on Grid System. and fully responsive layout. It fits perfectly on various displays and resolutions from regular desktop screens to tablets, iPads, iPhones, and small mobile devices.
+***************************************
+
+CSS TABLE OF CONTENTS
+===================================
+01. GLOBAL CSS 
+02. HOME PAGE
+03. ABOUT US PAGE
+04. MENU PAGE
+05. CONTACT PAGE
+06. BLOG DETAILS PAGE
+07. MENU DETAILS PAGE
+08. CART VIEW PAGE
+09. CHECKOUT PAGE
+10. SIGN IN PAGE
+11. PAYMENT PAGE
+12. FAQ PAGE
+13. TERMS AND CONDITION PAGE
+14. 404 PAGE
+15. DASHBOARD PAGE
+
+================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&family=Oleo+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
+
+::root {
+  --colorYellow: #FFE473;
+  --colorOrange: #FE7C14;
+  --colorRed: #eb0029;
+  --colorGrey: #acacac;
+  --paraColor: #484747;
+  /* --colorBlue: #231f40; */
+  --colorBlue: #00274C;
+  --colorWhite: #ffffff;
+  --paraFont: 'Manrope', sans-serif;
+  --headingFont: 'Barlow', sans-serif;
+  --cursiveFont: 'Oleo Script', cursive;
+  --karla: 'Karla';
+  --boxShadow: rgba(100, 100, 111, 0.15) 0px 7px 29px 0px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+*::selection {
+  background-color: var(--colorYellow);
+  color: var(--colorBlue);
+}
+
+/* .cart-page {
+  background-color: #e0dfdf;
+} */
+
+.cart-page .container .header {
+  width: 100%;
+  height: 5rem;
+  /* background-color: var(--colorWhite); */
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-page .container .header .cart-header-left a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+}
+
+.cart-page .container .header .cart-header-left .icon {
+  font-size: 1.6rem;
+  width: 1.5rem;
+}
+
+.cart-page .container .header .cart-header-left span {
+  font-size: 1.6rem;
+  color: var(--colorGrey);
+}
+
+.cart-page .container .contents {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2rem;
+  justify-items: end;
+  /* justify-content: space-between; */
+  /* justify-items: center; */
+  /* border: .1rem solid salmon; */
+  padding: 2rem;
+  /* border: .1rem solid salmon; */
+  margin-bottom: 4rem;
+}
+
+.cart-page .container .contents .col-left {
+  /* border: .1rem solid salmon; */
+  /* max-width: 65rem; */
+  width: 100%;
+}
+
+.cart-page .container .contents .col-left .title {
+  font-size: 3rem;
+}
+
+.cart-page .container .contents .col-left .total-order {
+  font-size: 1.6rem;
+  margin-top: 2rem;
+}
+
+.cart-page .container .contents .col-left .list-items {
+  margin-top: 1.5rem;
+}
+
+.cart-page .container .contents .col-left .list-items .box {
+  background-color: var(--colorWhite);
+  /* max-width: 40rem; */
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  height: 15rem;
+  /* justify-content: center; */
+  padding: 1rem;
+  padding-bottom: 2rem;
+  border-bottom: .1rem solid rgb(202, 201, 201);
+  /* border: .1rem solid salmon; */
+}
+
+.cart-page .container .contents .col-left .list-items .box .image {
+  width: 10rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.cart-page .container .contents .col-left .list-items .box .title {
+  /* border: .1rem solid salmon; */
+  flex-grow: 2;
+  padding: 1rem;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.cart-page .container .contents .col-left .list-items .box .title .detail {
+  flex-grow: 1;
+}
+
+.cart-page .container .contents .col-left .list-items .box .title .detail .name-product {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: grey;
+}
+
+.cart-page .container .contents .col-left .list-items .box .title .detail .price-product {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: grey;
+}
+
+
+.cart-page .container .contents .col-left .list-items .box .title .button {
+  flex-grow: 3;
+  display: flex;
+  align-items: end;
+  gap: .5rem;
+  /* border: .1rem solid salmon; */
+}
+
+.cart-page .container .contents .col-left .list-items .box .title .button span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
+  background-color: #e3e3e3;
+  border-radius: .5rem;
+}
+
+
+.cart-page .container .contents .col-left .list-items .box .delete {
+  /* border: .1rem solid salmon; */
+  flex-grow: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.cart-page .container .contents .col-left .list-items .box .delete .icon {
+  width: 1.5rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+.cart-page .container .contents .col-right {
+  max-width: 35rem;
+  /* border: .1rem solid salmon; */
+  /* width: 100%; */
+}
+
+.cart-page .container .contents .col-right .pickup-location {
+  /* border: .1rem solid salmon; */
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: .1rem solid var(--colorGrey);
+  padding-bottom: 2rem;
+}
+
+.cart-page .container .contents .col-right .pickup-location .header-pickup-location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-page .container .contents .col-right .pickup-location .header-pickup-location h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.cart-page .container .contents .col-right .pickup-location .body-address {
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cart-page .container .contents .col-right .pickup-location .body-address .box-address {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.4rem;
+}
+
+.cart-page .container .contents .col-right .pickup-location .body-address .icon {
+  /* border: .1rem solid salmon; */
+  width: 2rem;
+}
+
+.cart-page .container .contents .col-right .pickup-location .time {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-page .container .contents .col-right .pickup-location .time .icon {
+  width: 2rem;
+}
+
+.cart-page .container .contents .col-right .add-tip {
+  /* border: .1rem solid salmon; */
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* height: 12rem; */
+  padding-bottom: 2.5rem;
+  box-sizing: border-box;
+  border-bottom: .1rem solid var(--colorGrey);
+}
+
+.cart-page .container .contents .col-right .add-tip h1 {
+  font-size: 1.2rem;
+  font-weight: 699;
+}
+
+.cart-page .container .contents .col-right .add-tip .boxes {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.cart-page .container .contents .col-right .add-tip .boxes .box {
+  height: 5rem;
+  width: 7rem;
+  border-radius: .8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #efecec;
+
+}
+
+.cart-page .container .contents .col-right .add-tip .boxes .box.active {
+  background-color: var(--colorBlue);
+}
+
+.cart-page .container .contents .col-right .add-tip .boxes .box.active h1 {
+  color: var(--colorWhite);
+}
+
+.cart-page .container .contents .col-right .add-tip .custom-tip {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cart-page .container .contents .col-right .add-tip .custom-tip .input-tip {
+  height: 4rem;
+  width: 100%;
+  font-size: 1.4rem;
+  padding: 1rem;
+  border: .01rem solid grey;
+  border-radius: .5rem;
+}
+
+.cart-page .container .contents .col-right .add-tip .custom-tip .btn-custom-tip {
+  padding: 1rem 4rem;
+  border-radius: .5rem;
+  background-color: var(--colorBlue);
+  color: var(--colorWhite);
+  font-size: 1.4rem;
+}
+
+.cart-page .container .contents .col-right .add-tip .custom-tip .btn-cancel-tip {
+  padding: 1rem;
+  border-radius: .5rem;
+  background-color: var(--colorBlue);
+  color: var(--colorWhite);
+  font-size: 1.4rem;
+}
+
+.cart-page .container .contents .col-right .summary {
+  /* height: 10rem; */
+  /* border: .1rem solid salmon; */
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.cart-page .container .contents .col-right .summary .box-summary {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-page .container .contents .col-right .summary .box-summary p {
+  color: grey;
+  font-size: 1.4rem;
+}
+
+.cart-page .container .contents .col-right .summary .info-summary {
+  color: grey;
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cart-page .container .contents .col-right .summary .btn-payment {
+  background-color: var(--colorBlue);
+  color: var(--colorWhite);
+  font-size: 1.4rem;
+  border-radius: .5rem;
+  padding: 1rem;
+}
+
+.cart-page .container .contents .col-right .summary .btn-login {
+  background-color: #e7e4e4;
+  color: var(--colorBlue);
+  font-size: 1.4rem;
+  border-radius: .5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.cart-page .container .footer {
+  margin-top: 5rem;
+  width: 96%;
+  margin: 0 auto;
+  border-top: .1rem solid var(--colorGrey);
+  /* border: .1rem solid salmon; */
+}
+
+.cart-page .container .footer .footer-one {
+  /* border: .1rem solid salmon; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* .cart-page .container .footer .footer-one svg {
+  transform: scale(.9);
+} */
+
+.cart-page .container .footer .footer-one p {
+  font-size: 1.2rem;
+  color: grey;
+  text-align: center;
+}
+
+.cart-page .container .footer .footer-two {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  /* border: .1rem solid salmon; */
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 767px) {
+  .cart-page .container .contents {
+    justify-items: center;
+  }
+
+  .cart-page .container .contents .col-left {
+    max-width: 37rem;
+  }
+
+  .cart-page .container .contents .col-left .list-items {
+    padding: 1rem;
+  }
+
+  .cart-page .container .contents .col-right {
+    /* max-width: 100rem; */
+    width: 100%;
+    /* border: .1rem solid salmon; */
+  }
+}
