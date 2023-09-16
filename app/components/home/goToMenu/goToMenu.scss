@@ -1,0 +1,90 @@
+@import '../../../style/responsive.scss';
+@import '../../../style/variable.scss';
+
+.goToMenu {
+  background-color: $colorYellow;
+
+  .container {
+    .boxContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30rem;
+      position: relative;
+
+      .bgImage {
+        width: 10rem;
+        height: 10rem;
+        position: absolute;
+        z-index: 1;
+      }
+
+      .image1 {
+        top: 1rem;
+        right: 3rem;
+        z-index: 1;
+        animation: shake linear 1.5s infinite alternate;
+      }
+
+      .image2 {
+        right: 4rem;
+        bottom: 0rem;
+        position: absolute;
+        animation: rotate linear 10s infinite;
+      }
+
+      .image3 {
+        left: 4rem;
+        bottom: 0rem;
+      }
+
+      .image4 {
+        left: 4rem;
+        top: 1rem;
+        animation: rotate linear 10s infinite;
+      }
+
+      a {
+
+        button {
+          background-color: $colorBlue;
+          color: $colorWhite;
+          padding: 1rem 2rem;
+          border-radius: .5rem;
+
+          .icon {
+            margin-left: .5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+@keyframes shake {
+  from {
+    margin-left: 10px;
+  }
+
+  to {
+    margin-left: 0px;
+  }
+}
