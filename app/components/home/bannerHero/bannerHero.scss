@@ -1,0 +1,141 @@
+@import '../../../style/variable.scss';
+@import '../../../style/responsive.scss';
+
+.hero {
+  margin-top: 13rem;
+  height: 85.5vh;
+  background: #161329c4;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &::before {
+    content: '';
+    height: 85.5vh;
+    width: 100%;
+    color: $colorWhite;
+    position: absolute;
+    top: 0;
+    background-color: rgba(18, 16, 35, 0.7);
+  }
+
+  .container {
+    .banner-hero {
+      display: flex;
+      justify-content: space-between;
+
+      .col-left {
+        height: 85.5vh;
+        max-width: 60rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 2;
+        gap: 1rem;
+        padding: 0 2rem;
+      }
+
+      h1 {
+        color: $colorWhite;
+        font-family: $headingFont;
+        font-size: 5.8rem;
+        font-weight: 700;
+
+        @include smallPhone {
+          font-size: 4.8rem;
+        }
+
+        span {
+          color: $colorWhite;
+          font-family: $headingFont;
+          font-size: 5.8rem;
+          font-weight: 700;
+          -webkit-text-stroke-width: .1rem;
+          -webkit-text-stroke-color: $colorWhite;
+          text-shadow: $colorWhite;
+        }
+      }
+
+      h3 {
+        color: $colorYellow !important;
+        font-size: 3rem;
+        font-weight: 600;
+        font-family: $cursiveFont;
+
+        @include smallPhone {
+          margin-top: 3rem;
+        }
+      }
+
+      p {
+        color: $colorWhite;
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
+
+      .review-hero {
+        height: 6rem !important;
+        display: flex;
+        flex-direction: column;
+        gap: .2rem;
+        margin-top: 1rem;
+
+        .stars-review {
+          i {
+            font-size: 1.4rem;
+            color: $colorYellow;
+          }
+        }
+
+        .desc-review {
+          margin-top: .5rem;
+
+          p {
+            color: $colorWhite;
+            font-size: 1.6rem;
+            font-style: italic;
+          }
+
+          span {
+            color: $colorWhite;
+            font-size: 1.6rem;
+            font-style: italic;
+            font-weight: 600;
+          }
+
+          .icon {
+            color: $colorWhite;
+            margin-left: 1rem;
+          }
+        }
+      }
+
+      .cta-hero {
+        .btn-cta-hero {
+          padding: 1rem 2rem;
+          background-color: $colorYellow;
+          color: $colorBlue;
+          border-radius: .7rem;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .col-right {
+      width: 60rem;
+      height: 85.5vh;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      .image-right {
+        width: 50rem;
+        border-radius: 50%;
+        border: 1rem solid $colorYellow;
+        overflow: hidden;
+      }
+    }
+  }
+}
