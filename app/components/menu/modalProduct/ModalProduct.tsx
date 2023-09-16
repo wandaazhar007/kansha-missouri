@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from "react-toastify";
 
-const ModalProduct = ({ openModal, closeModal, propId }) => {
+const ModalProduct = ({ openModal, closeModal, propId }: any) => {
   if (!openModal) return null;
 
   const [isLoading, setIsLoading] = useState(true);

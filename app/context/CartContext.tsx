@@ -19,7 +19,7 @@ export function CartProvider({ children }: any) {
   let cartFromLocalStorage = [];
   // useEffect(() => {
   if (typeof window !== 'undefined') {
-    cartFromLocalStorage = JSON.parse(localStorage.getItem('cart_kansha' || '[]'));
+    cartFromLocalStorage = JSON.parse(localStorage.getItem('cart_kansha' || '[]') || "");
     console.log(cartFromLocalStorage);
 
   }
@@ -37,55 +37,54 @@ export function CartProvider({ children }: any) {
     // localStorage.setItem('cart_kansha', JSON.stringify(cartProducts));
   }, [cartProducts]);
 
-  function getProductQuantity(id) {
-    const quantity = cartProducts.find((product) => product.id === id)?.quantity
+  function getProductQuantity(id: number) {
+    const quantity = cartProducts.find((product: any) => product.id === id)?.quantity
     if (quantity === undefined) {
       return 0;
     }
     return quantity;
   }
 
-  function addOneToCart(id, name, price) {
+  function addOneToCart(id: number, name: string, price: number) {
     const quantity = getProductQuantity(id);
     if (quantity === 0) {
       setCartProducts([...cartProducts, { id: id, name: name, price: price, quantity: 1 }]);
     } else {
-      setCartProducts(cartProducts.map((product) => product.id === id ? { ...product, quantity: product.quantity + 1 } : product));
+      setCartProducts(cartProducts.map((product: any) => product.id === id ? { ...product, quantity: product.quantity + 1 } : product));
     }
   }
 
-  function removeOneFromCart(id) {
+  function removeOneFromCart(id: number) {
     const quantity = getProductQuantity(id);
 
     if (quantity == 1) {
       deleteFromCart(id);
     } else {
       setCartProducts(
-        cartProducts.map(
-          product =>
-            product.id === id                                // if condition
-              ? { ...product, quantity: product.quantity - 1 } // if statement is true
-              : product                                        // if statement is false
+        cartProducts.map((product: any) =>
+          product.id === id                                // if condition
+            ? { ...product, quantity: product.quantity - 1 } // if statement is true
+            : product                                        // if statement is false
         )
       )
     }
   }
 
-  function deleteFromCart(id) {
-    setCartProducts((cartProducts) => cartProducts.filter((currentProduct) => {
+  function deleteFromCart(id: any) {
+    setCartProducts((cartProducts: any) => cartProducts.filter((currentProduct: any) => {
       return currentProduct.id != id;
     }))
   }
 
   function getTotalCost() {
     let totalCost = 0;
-    const amount = cartProducts.reduce((sum, product) => sum + (product.price * product.quantity), 0)
+    const amount = cartProducts.reduce((sum: any, product: any) => sum + (product.price * product.quantity), 0)
 
     totalCost += amount
     return totalCost;
   }
 
-  const contextValue = {
+  const contextValue: any = {
     items: cartProducts,
     getProductQuantity,
     addOneToCart,

@@ -4,10 +4,10 @@ import Image from 'next/image';
 import axios from 'axios';
 import { useEffect, useState, useContext } from "react";
 import ModalProduct from '../modalProduct/ModalProduct';
-import { SearchContext } from '@/app/context/searchContext';
+import { SearchContext } from '@/app/context/SearchContext';
 
 const BoxMenu: React.FC = () => {
-  const searchContext = useContext(SearchContext);
+  const searchContext: any = useContext(SearchContext);
   const setQuerySearch = searchContext.setQuerySearch;
   const querySearch = searchContext.querySearch;
   const [isLoading, setIsLoading] = useState(true);
@@ -72,7 +72,7 @@ const BoxMenu: React.FC = () => {
     getMenuBentoBox();
   }, []);
 
-  const handleModal = (slug, id, name, price) => {
+  const handleModal = (slug: string, id: any, name: string, price: number) => {
     setOpenModal(true);
     setPropSlug(slug);
     setPropId(id);
@@ -87,7 +87,7 @@ const BoxMenu: React.FC = () => {
           <>
             <div className="category">
               <h1 className="title">HIBACHI</h1>
-              {hibachi.map((menu) => (
+              {hibachi.map((menu: any) => (
                 <>
                   <div className="box" key={menu.id} onClick={() => handleModal(menu.slug, menu.id, menu.name, parseFloat(menu.price))}>
                     <div className="boxImage">
@@ -108,7 +108,7 @@ const BoxMenu: React.FC = () => {
 
             <div className="category">
               <h1 className="title">SIDE ORDER</h1>
-              {sideOrder.map((menu) => (
+              {sideOrder.map((menu: any) => (
                 <>
                   <div className="box" key={menu.id} onClick={() => handleModal(menu.slug, menu.id, menu.name, parseFloat(menu.price))}>
                     <div className="boxImage">
@@ -128,7 +128,7 @@ const BoxMenu: React.FC = () => {
 
             <div className="category">
               <h1 className="title">APPETIZER</h1>
-              {appetizer.map((menu) => (
+              {appetizer.map((menu: any) => (
                 <>
                   <div className="box" key={menu.id} onClick={() => handleModal(menu.slug, menu.id, menu.name, parseFloat(menu.price))}>
                     <div className="boxImage">
@@ -148,7 +148,7 @@ const BoxMenu: React.FC = () => {
 
             <div className="category">
               <h1 className="title">ADD ONS</h1>
-              {addOns.map((menu) => (
+              {addOns.map((menu: any) => (
                 <>
                   <div className="box" key={menu.id} onClick={() => handleModal(menu.slug, menu.id, menu.name, parseFloat(menu.price))}>
                     <div className="boxImage">
@@ -169,7 +169,7 @@ const BoxMenu: React.FC = () => {
 
             <div className="category">
               <h1 className="title">BENTO BOX</h1>
-              {bentoBox.map((menu) => (
+              {bentoBox.map((menu: any) => (
                 <>
                   <div className="box" key={menu.id} onClick={() => handleModal(menu.slug, menu.id, menu.name, parseFloat(menu.price))}>
                     <div className="boxImage">
@@ -189,7 +189,7 @@ const BoxMenu: React.FC = () => {
 
             <div className="category">
               <h1 className="title">SUSHI ROLL</h1>
-              {sushi.map((menu) => (
+              {sushi.map((menu: any) => (
                 <>
                   <div className="box" key={menu.id} onClick={() => handleModal(menu.slug, menu.id, menu.name, parseFloat(menu.price))}>
                     <div className="boxImage">
