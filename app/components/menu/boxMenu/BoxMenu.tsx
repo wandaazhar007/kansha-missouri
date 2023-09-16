@@ -4,7 +4,8 @@ import Image from 'next/image';
 import axios from 'axios';
 import { useEffect, useState, useContext } from "react";
 import ModalProduct from '../modalProduct/ModalProduct';
-import { SearchContext } from '@/app/context/SearchContext';
+// import { SearchContext } from '@/app/context/SearchContext';
+import { SearchContext } from '../../../context/SearchContext'
 
 const BoxMenu: React.FC = () => {
   const searchContext: any = useContext(SearchContext);

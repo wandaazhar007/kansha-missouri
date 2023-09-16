@@ -1,6 +1,7 @@
 'use client'
 import { createContext, useEffect, useState } from "react";
 
+// export const CartContext = createContext({items: []});
 export const CartContext = createContext({
   items: [],
   getProductQuantity: () => { },

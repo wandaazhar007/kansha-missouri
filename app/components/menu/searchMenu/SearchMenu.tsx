@@ -6,7 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useState } from "react";
 import axios from "axios";
 import ModalProduct from '../modalProduct/ModalProduct';
-import { SearchContext } from '@/app/context/SearchContext';
+// import { SearchContext } from '@/app/context/SearchContext';
+import { SearchContext } from '../../../context/SearchContext'
 
 const SearchMenu: React.FC = () => {
   const searchContext: any = useContext(SearchContext);

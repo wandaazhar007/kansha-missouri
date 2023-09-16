@@ -3,7 +3,8 @@ import { useState, useContext } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { CartContext } from "@/app/context/CartContext";
+// import { CartContext } from "@/app/context/CartContext";
+import { CartContext } from '../../context/CartContext'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
@@ -14,7 +15,7 @@ const Navbar: React.FC = () => {
   const [show, setShow] = useState(false);
   const [hideTopbar, setHideTopbar] = useState(false);
 
-  const productsCount = cart.items?.reduce((sum, product) => sum + product.quantity, 0);
+  const productsCount = cart.items?.reduce((sum, product: any) => sum + product.quantity, 0);
 
   const changeTopbar = () => {
     // console.log(window.scrollY);
