@@ -1,0 +1,202 @@
+@import '../../../style/variable.scss';
+@import '../../../style/responsive.scss';
+
+.modal-product {
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  backdrop-filter: blur(.2rem);
+
+  .box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .box {
+      background-color: $colorWhite;
+      width: 90%;
+      max-width: 43rem;
+      padding: 2rem;
+      border-radius: 1rem;
+      position: relative;
+      box-shadow: 0rem 0rem 1rem .1rem rgba(245, 237, 8, 0.5);
+
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .modal-body {
+        .content-image {
+          max-width: 40rem;
+          border-radius: 1rem;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .title-detail-product {
+          font-size: 2rem;
+          margin-top: 1rem;
+          font-weight: 700;
+        }
+
+        .price-detail-product {
+          margin-top: .5rem;
+          font-size: 1.6rem;
+          color: grey;
+          font-weight: 600;
+        }
+
+        .desc-detail-product {
+          font-size: 1.4rem;
+          margin-top: 2rem;
+          color: $colorGrey;
+          height: 12rem;
+          overflow: auto;
+        }
+      }
+
+      .modal-footer {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .add-to-cart {
+          padding: 1rem;
+          height: 5rem;
+          width: 80%;
+          background-color: $colorBlue;
+          color: $colorWhite;
+          border: .01rem solid white;
+          border-radius: .5rem;
+          cursor: pointer;
+          font-size: 1.6rem;
+
+          .icon {
+            margin-right: 2rem;
+          }
+        }
+
+        .close-btn-2 {
+          padding: 1rem;
+          height: 5rem;
+          width: 5rem;
+          background-color: $colorBlue;
+          color: $colorWhite;
+          border: .01rem solid var(--colorBlue);
+          border-radius: .5rem;
+          cursor: pointer;
+          font-size: 1.4rem;
+          box-shadow: $boxShadow;
+        }
+      }
+    }
+
+    .close-btn {
+      position: absolute;
+      height: 5rem;
+      width: 5rem;
+      border-radius: 50%;
+      background-color: $colorBlue;
+      cursor: pointer;
+      right: -2rem;
+      top: -2rem;
+      z-index: 9;
+
+      &::after {
+        content: "X";
+        color: $colorYellow;
+        font-size: 2rem;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(30%);
+      }
+    }
+  }
+}
+
+
+
+
+// SKELETON MODAL
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.skeleton.skeleton-image-modal {
+  width: 100%;
+  height: 35rem;
+  border-radius: 1rem;
+  opacity: .5;
+}
+
+.skeleton.skeleton-title-modal {
+  margin-top: 2rem;
+  width: 50%;
+  height: 1.64rem;
+  border-radius: 1rem;
+}
+
+.skeleton.skeleton-price-modal {
+  margin-top: 1rem;
+  width: 20%;
+  height: 1rem;
+  border-radius: 1rem;
+}
+
+.skeleton.skeleton-desc-modal {
+  margin-top: 1rem;
+  width: 90%;
+  height: 1rem;
+  border-radius: 1rem;
+}
+
+.skeleton.skeleton-btn-close-modal {
+  margin-top: 2rem;
+  padding: 1rem;
+  height: 5rem;
+  width: 5rem;
+  border-radius: .5rem;
+}
+
+.skeleton.skeleton-btn-cart-modal {
+  margin-top: 2rem;
+  padding: 1rem;
+  height: 5rem;
+  width: 80%;
+  border-radius: .5rem;
+}
+
+.Toastify__toast-body {
+  font-size: 1.6rem;
+  text-align: center;
+
+  @include tablet {
+    font-size: 2.2rem;
+  }
+}
