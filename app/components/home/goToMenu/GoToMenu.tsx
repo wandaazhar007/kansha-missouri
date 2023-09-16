@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 
-const GoToMenu = () => {
+const GoToMenu: React.FC = () => {
   return (
     <section className="goToMenu">
       <div className="container">

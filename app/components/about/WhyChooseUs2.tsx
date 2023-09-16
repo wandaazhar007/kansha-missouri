@@ -3,7 +3,7 @@ import './whyChooseUs2.scss';
 import Image from "next/image";
 import { faBook, faChessRook, faHeadset, faUser } from '@fortawesome/free-solid-svg-icons';
 
-const WhyChooseUs2 = () => {
+const WhyChooseUs2: React.FC = () => {
   return (
     <section className="whyChooseUs2">
       <div className="container">

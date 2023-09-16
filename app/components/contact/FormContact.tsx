@@ -6,7 +6,7 @@ import Link from "next/link";
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
 
-const FormContact = () => {
+const FormContact: React.FC = () => {
   return (
     <>
       <div className="container">

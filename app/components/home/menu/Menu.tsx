@@ -9,7 +9,7 @@ import ReactPaginate from "react-paginate";
 import ModalProduct from "../../menu/modalProduct/ModalProduct";
 import { motion } from "framer-motion";
 
-const Menu = () => {
+const Menu: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [openModal, setOpenModal] = useState(false);
   const [propSlug, setPropSlug] = useState('')

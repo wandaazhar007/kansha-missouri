@@ -1,4 +1,4 @@
-const Vision = () => {
+const Vision: React.FC = () => {
   return (
     <section className="tf__mission mt_100 xs_mt_70" style={{ backgroundImage: "url(" + "/images/mission_bg.png" + ")" }} >
       <div className="tf__mission_overlay pt_70 xs_pt_40 pb_100 xs_pb_70">

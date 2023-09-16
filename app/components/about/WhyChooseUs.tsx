@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 
-const WhyChooseUs = () => {
+const WhyChooseUs: React.FC = () => {
   return (
     <section className="tf__about_choose mt_100 xs_mt_70" style={{ marginBottom: "50px", padding: '0 20px' }}>
       <div className="container">

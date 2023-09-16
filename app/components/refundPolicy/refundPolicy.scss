@@ -1,0 +1,78 @@
+.refundPolicy {
+  margin: 5rem 0;
+  padding: 5rem 2rem;
+  margin-top: 13rem;
+
+  .container {
+    .box-container {
+      .header {
+        font-size: 1.8rem;
+      }
+
+      .sub-header {
+        font-size: 2.8rem;
+        font-weight: 500;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: .2rem solid grey;
+      }
+
+      .content {
+        p {
+          font-size: 1.5rem;
+          line-height: 3rem;
+        }
+
+        .content-header {
+          padding-left: 1.5rem;
+          font-size: 1.5rem;
+          list-style: none;
+
+          li {
+            margin-top: 2rem;
+            font-weight: 700;
+          }
+
+          p {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+          }
+
+          .sub-content-header {
+            font-size: 1.5rem;
+            padding-left: 3.5rem;
+            line-height: 3rem;
+            list-style-type: square;
+
+            li {
+              font-weight: normal;
+
+              ul {
+                padding-left: 2.5rem;
+                list-style-type: lower-alpha;
+
+                li {
+                  margin-top: .5rem;
+                }
+              }
+            }
+          }
+
+          .contactUs {
+            margin-top: 1rem;
+            font-weight: 600;
+
+            table {
+              tr {
+                td {
+                  padding: .5rem 1rem;
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -8,7 +8,7 @@ import axios from "axios";
 import ModalProduct from '../modalProduct/ModalProduct';
 import { SearchContext } from '@/app/context/SearchContext';
 
-const SearchMenu = () => {
+const SearchMenu: React.FC = () => {
   const searchContext = useContext(SearchContext);
   const setQuerySearch = searchContext.setQuerySearch;
   const querySearch = searchContext.querySearch;

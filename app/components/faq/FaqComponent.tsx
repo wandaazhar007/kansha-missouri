@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { faSquareArrowUpRight } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 
-const FaqComponent = () => {
+const FaqComponent: React.FC = () => {
   return (
     <section className="faq faq-page">
       <div className="container">

@@ -3,7 +3,7 @@ import Image from "next/image";
 import './galeryComponent.scss';
 import { motion } from "framer-motion";
 
-const GaleryBox = () => {
+const GaleryBox: React.FC = () => {
   return (
     <section className="galery-box">
       <div className="container">

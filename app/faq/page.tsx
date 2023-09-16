@@ -1,28 +1,21 @@
-import '../../../faq/faq.scss';
-import { faSquareArrowUpRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
-import { motion } from 'framer-motion';
+import './faq.scss';
 
-const Faq: React.FC = () => {
+export const metadata = {
+  title: 'About Kansha Hibachi Express',
+  description: 'CFind answers to your questions at Kansha Hibachi Express FAQ. Get insights on reservations, menu items, hibachi experience, and more. Your dining experience matters to us, and we are here to provide you with the information you need.',
+}
+
+const FaqPage: React.FC = () => {
   return (
-    <section className="faq">
+    <section className="faq faq-page">
       <div className="container">
         <div className="box-container">
-          <motion.div
-            initial={{ opacity: 1, scale: 1, y: -100 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="header">
+          <div className="header">
             <h1>Frequently Asked Questions</h1>
             <p>Let&apos;s answer some of your questions.</p>
-          </motion.div>
+          </div>
           <ul className="accordion">
-            <motion.li
-              initial={{ opacity: 0, scale: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-            >
+            <li>
               <input type="radio" name='accordion' id="first" />
               <label htmlFor="first">What are your operating hours?</label>
               <div className="content">
@@ -30,7 +23,7 @@ const Faq: React.FC = () => {
                   Our operating hours are (<b>Monday to Saturday 11:00AM - 2:30PM, and 04:00PM - 09:00PM</b>). (<b>Sunday 04:00PM - 09:00PM</b>). We're open 7 days of the week for lunch and dinner, so you can satisfy your hibachi cravings at your convenience.
                 </p>
               </div>
-            </motion.li>
+            </li>
             <li>
               <input type="radio" name='accordion' id="second" />
               <label htmlFor="second">Do you offer delivery?</label>
@@ -67,15 +60,10 @@ const Faq: React.FC = () => {
               </div>
             </li>
           </ul>
-          <div className="all-faq">
-            <Link href="/faq">
-              <p>See All Faq's <FontAwesomeIcon icon={faSquareArrowUpRight} className="icon" /></p>
-            </Link>
-          </div>
         </div>
       </div>
     </section>
   );
 }
 
-export default Faq;
+export default FaqPage;
