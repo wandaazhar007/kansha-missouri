@@ -9,7 +9,7 @@ import ModalProduct from '../modalProduct/ModalProduct';
 import { SearchContext } from '@/app/context/SearchContext';
 
 const SearchMenu: React.FC = () => {
-  const searchContext = useContext(SearchContext);
+  const searchContext: any = useContext(SearchContext);
   const setQuerySearch = searchContext.setQuerySearch;
   const querySearch = searchContext.querySearch;
   const [isLoading, setIsLoading] = useState(true);
@@ -28,14 +28,14 @@ const SearchMenu: React.FC = () => {
     }, 1000)
   }
 
-  const handleSearch = (e) => {
+  const handleSearch = (e: any) => {
     setQuerySearch(e.target.value);
     setIsLoading(true);
     getSearch();
 
   }
 
-  const handleModal = (id, name, price) => {
+  const handleModal = (id: any, name: string, price: any) => {
     setOpenModal(true);
     setPropId(id);
     setPropName(name);
@@ -59,7 +59,7 @@ const SearchMenu: React.FC = () => {
               (<>
                 {isLoading &&
                   <div className="content">
-                    {menus.map((menu, index) => (
+                    {menus.map((menu: any, index) => (
                       <div className="box" key={menu.id}>
                         <div className="skeleton box-images-skeleton">
                         </div>
@@ -82,7 +82,7 @@ const SearchMenu: React.FC = () => {
                       <button onClick={handleReset}>{querySearch} <FontAwesomeIcon icon={faClose} className='icon' /> </button>
                     </div>
                     <div className="content">
-                      {menus.map((menu, index) => (
+                      {menus.map((menu: any, index) => (
                         <>
                           <div className="box" key={menu.id} onClick={() => handleModal(menu.id, menu.name, parseFloat(menu.price))}>
                             <div className="box-images">
