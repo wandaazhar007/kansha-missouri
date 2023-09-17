@@ -1,18 +1,18 @@
 'use client'
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 export const SearchContext = createContext({});
 
 export function SearchProvider({ children }: any) {
   const [querySearch, setQuerySearch] = useState('');
 
-  const searchMenu = () => {
-    // setKeyWord('')
-  }
+  // const searchMenu = () => {
+  //   setKeyWord('')
+  // }
   const contextValue = {
     setQuerySearch,
     querySearch,
-    searchMenu
+    // searchMenu
   }
   return (
     <SearchContext.Provider value={contextValue}>

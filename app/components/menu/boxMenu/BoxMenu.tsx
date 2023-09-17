@@ -15,8 +15,6 @@ const BoxMenu: React.FC = () => {
   const [openModal, setOpenModal] = useState(false);
   const [propSlug, setPropSlug] = useState('')
   const [propId, setPropId] = useState('');
-  const [propName, setPropName] = useState('');
-  const [propPrice, setPropPrice] = useState(0);
   const [limit, setLimit] = useState("");
   const [hibachi, setHibachi] = useState([]);
   const [sushi, setSushi] = useState([]);
@@ -67,27 +65,17 @@ const BoxMenu: React.FC = () => {
 
   type ModalType = {
     slug: string,
-    id: string,
+    id: any,
     name: string,
     price: number
   }
-  // const handleModal = (slug: string, id: any, name: string, price: number) => {
-  const handleModal = ({ slug, id, name, price }: ModalType) => {
+
+  const handleModal = (slug: string, id: any, name: string, price: number) => {
+    // const handleModal = ({ slug, id, name, price }: ModalType) => {
     setOpenModal(true);
     setPropSlug(slug);
     setPropId(id);
-    setPropName(name);
-    setPropPrice(price);
   }
-
-  // type MenuType = {
-  //   id: number,
-  //   name: string,
-  //   slug: string,
-  //   desc: string,
-  //   price: number,
-  //   urlImage: string
-  // }
 
   return (
     <>
@@ -99,13 +87,12 @@ const BoxMenu: React.FC = () => {
               {hibachi.map((menu: getMenuProps) => (
                 <>
                   <div className="box" key={menu.id} onClick={() => handleModal(menu.slug, menu.id, menu.name, parseFloat(menu.price))}>
-                    <div className="boxImage">
+                    <div className="boxImage" key={menu.id}>
                       <Image className='imm' src={menu.urlImage} width={100} height={100} alt='kansha hibachi' />
                     </div>
                     <div className="col-right">
                       <div className="top">
                         <h1 className="title">{menu.name}</h1>
-                        {/* <h3 className='price'>{menu.price}</h3> */}
                         <h3 className='price'>{menu.name === 'Hibachi Lobster' ? 'Market Price' : menu.price}</h3>
                       </div>
                       <p className='desc'>{menu.desc.substring(0, 80)}</p>
@@ -166,7 +153,6 @@ const BoxMenu: React.FC = () => {
                     <div className="col-right">
                       <div className="top">
                         <h1 className="title">{menu.name}</h1>
-                        {/* <h3 className='price'>{menu.price}</h3> */}
                         <h3 className='price'>{menu.name === 'Lobster' ? 'Market Price' : menu.price}</h3>
                       </div>
                       <p className='desc'>{menu.desc.substring(0, 80)}</p>
@@ -198,7 +184,7 @@ const BoxMenu: React.FC = () => {
 
             <div className="category">
               <h1 className="title">SUSHI ROLL</h1>
-              {sushi.map((menu: getMenuPropsk) => (
+              {sushi.map((menu: getMenuProps) => (
                 <>
                   <div className="box" key={menu.id} onClick={() => handleModal(menu.slug, menu.id, menu.name, parseFloat(menu.price))}>
                     <div className="boxImage">
@@ -207,7 +193,6 @@ const BoxMenu: React.FC = () => {
                     <div className="col-right">
                       <div className="top">
                         <h1 className="title">{menu.name}</h1>
-                        {/* <h3 className='price'>{menu.price}</h3> */}
                         <h3 className='price'>{menu.name === 'Lobster Roll' ? 'Market Price' : menu.price}</h3>
                       </div>
                       <p className='desc'>{menu.desc.substring(0, 80)}</p>
@@ -221,7 +206,7 @@ const BoxMenu: React.FC = () => {
 
       </div>
 
-      <ModalProduct openModal={openModal} closeModal={() => setOpenModal(false)} propId={propId} propName={propName} propPrice={propPrice} />
+      <ModalProduct openModal={openModal} closeModal={() => setOpenModal(false)} propId={propId} />
     </>
   );
 }

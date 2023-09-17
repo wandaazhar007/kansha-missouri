@@ -8,7 +8,7 @@ export type getMenuProps = {
 }
 
 export type openModalTypes = {
-  openModal: boolean,
+  openModal: any,
   closeModal: any,
-  propId: number
+  propId: any
 }

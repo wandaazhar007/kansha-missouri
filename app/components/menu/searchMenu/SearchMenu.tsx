@@ -18,13 +18,12 @@ const SearchMenu: React.FC = () => {
   const [propId, setPropId] = useState('');
   const [propName, setPropName] = useState('');
   const [propPrice, setPropPrice] = useState(0);
-  const [msg, setMsg] = useState("");
-  const [menus, setMenus] = useState([]);
+  const [results, setResult] = useState([]);
 
   const getSearch = async () => {
     const responseSearch = await axios.get(`${process.env.NEXT_PUBLIC_PRODUCT_SEARCH}search_query=${querySearch}`);
     setTimeout(() => {
-      setMenus(responseSearch.data.result);
+      setResult(responseSearch.data.result);
       setIsLoading(false)
     }, 1000)
   }
@@ -56,12 +55,13 @@ const SearchMenu: React.FC = () => {
             <div className="search-menu">
               <input type="text" name='message' className="search" placeholder="Search Menu Here..." onChange={handleSearch} value={querySearch} />
             </div>
+
             {querySearch ?
               (<>
                 {isLoading &&
                   <div className="content">
-                    {menus.map((menu: getMenuProps, index) => (
-                      <div className="box" key={menu.id}>
+                    {results.map((result: getMenuProps) => (
+                      <div className="box" key={result.id}>
                         <div className="skeleton box-images-skeleton">
                         </div>
                         <div className="box-contents">
@@ -83,20 +83,18 @@ const SearchMenu: React.FC = () => {
                       <button onClick={handleReset}>{querySearch} <FontAwesomeIcon icon={faClose} className='icon' /> </button>
                     </div>
                     <div className="content">
-                      {menus.map((menu: getMenuProps, index) => (
+                      {results.map((result: getMenuProps) => (
                         <>
-                          <div className="box" key={menu.id} onClick={() => handleModal(menu.id, menu.name, parseFloat(menu.price))}>
+                          <div className="box" key={result.id} onClick={() => handleModal(result.id, result.name, parseFloat(result.price))}>
                             <div className="box-images">
-                              <Image height={300} width={300} src={menu.urlImage} alt={menu.name} />
+                              <Image height={300} width={300} src={result.urlImage} alt={result.name} />
                             </div>
                             <div className="box-contents">
-                              <h1 className="title" >{menu.name}</h1>
-                              {/* <p className="price">${menu.price}</p> */}
-                              {/* `$${menu.price}` */}
-                              <p className="price">{menu.name == 'Lobster' ? 'Market Price' : menu.name == 'Hibachi Lobster' ? 'Market Price' : menu.name == 'Lobster Roll' ? 'Market Price' : `$${menu.price}`}</p>
+                              <h1 className="title" >{result.name}</h1>
+                              <p className="price">{result.name == 'Lobster' ? 'Market Price' : result.name == 'Hibachi Lobster' ? 'Market Price' : result.name == 'Lobster Roll' ? 'Market Price' : `$${result.price}`}</p>
                               <div className="footer-products">
                                 <div className="desc">
-                                  <p>{menu.desc.substring(0, 40)}</p>
+                                  <p>{result.desc.substring(0, 40)}</p>
                                 </div>
                               </div>
                             </div>
@@ -108,14 +106,12 @@ const SearchMenu: React.FC = () => {
                 }
               </>)
               : ''
-
             }
-
           </div>
         </div>
       </section>
 
-      <ModalProduct openModal={openModal} closeModal={() => setOpenModal(false)} propId={propId} propName={propName} propPrice={propPrice} />
+      <ModalProduct openModal={openModal} closeModal={() => setOpenModal(false)} propId={propId} />
     </>
   );
 }
