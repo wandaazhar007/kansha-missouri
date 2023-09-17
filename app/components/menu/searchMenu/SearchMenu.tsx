@@ -15,9 +15,7 @@ const SearchMenu: React.FC = () => {
   const querySearch = searchContext.querySearch;
   const [isLoading, setIsLoading] = useState(true);
   const [openModal, setOpenModal] = useState(false);
-  const [propId, setPropId] = useState('');
-  const [propName, setPropName] = useState('');
-  const [propPrice, setPropPrice] = useState(0);
+  const [propId, setPropId] = useState(0);
   const [results, setResult] = useState([]);
 
   const getSearch = async () => {
@@ -35,11 +33,9 @@ const SearchMenu: React.FC = () => {
 
   }
 
-  const handleModal = (id: any, name: string, price: any) => {
+  const handleModal = (id: number) => {
     setOpenModal(true);
     setPropId(id);
-    setPropName(name);
-    setPropPrice(price);
   }
 
   const handleReset = () => {
@@ -85,7 +81,7 @@ const SearchMenu: React.FC = () => {
                     <div className="content">
                       {results.map((result: getMenuProps) => (
                         <>
-                          <div className="box" key={result.id} onClick={() => handleModal(result.id, result.name, parseFloat(result.price))}>
+                          <div className="box" key={result.id} onClick={() => handleModal(result.id)}>
                             <div className="box-images">
                               <Image height={300} width={300} src={result.urlImage} alt={result.name} />
                             </div>

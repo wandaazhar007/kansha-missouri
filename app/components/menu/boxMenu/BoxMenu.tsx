@@ -14,7 +14,7 @@ const BoxMenu: React.FC = () => {
   // const [isLoading, setIsLoading] = useState(true);
   const [openModal, setOpenModal] = useState(false);
   // const [propSlug, setPropSlug] = useState('')
-  const [propId, setPropId] = useState('');
+  const [propId, setPropId] = useState(0);
   const [limit, setLimit] = useState("");
   const [hibachi, setHibachi] = useState([]);
   const [sushi, setSushi] = useState([]);
@@ -71,7 +71,7 @@ const BoxMenu: React.FC = () => {
   //   price: number
   // }
 
-  const handleModal = (slug: string, id: any, name: string, price: number) => {
+  const handleModal = (id: number) => {
     // const handleModal = ({ slug, id, name, price }: ModalType) => {
     setOpenModal(true);
     setPropId(id);
@@ -86,7 +86,7 @@ const BoxMenu: React.FC = () => {
               <h1 className="title">HIBACHI</h1>
               {hibachi.map((menu: getMenuProps) => (
                 <>
-                  <div className="box" key={menu.id} onClick={() => handleModal(menu.slug, menu.id, menu.name, parseFloat(menu.price))}>
+                  <div className="box" key={menu.id} onClick={() => handleModal(menu.id)}>
                     <div className="boxImage" key={menu.id}>
                       <Image className='imm' src={menu.urlImage} width={100} height={100} alt='kansha hibachi' />
                     </div>
@@ -106,7 +106,7 @@ const BoxMenu: React.FC = () => {
               <h1 className="title">SIDE ORDER</h1>
               {sideOrder.map((menu: getMenuProps) => (
                 <>
-                  <div className="box" key={menu.id} onClick={() => handleModal(menu.slug, menu.id, menu.name, parseFloat(menu.price))}>
+                  <div className="box" key={menu.id} onClick={() => handleModal(menu.id)}>
                     <div className="boxImage">
                       <Image className='imm' src={menu.urlImage} width={100} height={100} alt='kansha hibachi' />
                     </div>
@@ -126,7 +126,7 @@ const BoxMenu: React.FC = () => {
               <h1 className="title">APPETIZER</h1>
               {appetizer.map((menu: getMenuProps) => (
                 <>
-                  <div className="box" key={menu.id} onClick={() => handleModal(menu.slug, menu.id, menu.name, parseFloat(menu.price))}>
+                  <div className="box" key={menu.id} onClick={() => handleModal(menu.id)}>
                     <div className="boxImage">
                       <Image className='imm' src={menu.urlImage} width={100} height={100} alt='kansha hibachi' />
                     </div>
@@ -146,7 +146,7 @@ const BoxMenu: React.FC = () => {
               <h1 className="title">ADD ONS</h1>
               {addOns.map((menu: getMenuProps) => (
                 <>
-                  <div className="box" key={menu.id} onClick={() => handleModal(menu.slug, menu.id, menu.name, parseFloat(menu.price))}>
+                  <div className="box" key={menu.id} onClick={() => handleModal(menu.id)}>
                     <div className="boxImage">
                       <Image className='imm' src={menu.urlImage} width={100} height={100} alt='kansha hibachi' />
                     </div>
@@ -166,7 +166,7 @@ const BoxMenu: React.FC = () => {
               <h1 className="title">BENTO BOX</h1>
               {bentoBox.map((menu: getMenuProps) => (
                 <>
-                  <div className="box" key={menu.id} onClick={() => handleModal(menu.slug, menu.id, menu.name, parseFloat(menu.price))}>
+                  <div className="box" key={menu.id} onClick={() => handleModal(menu.id)}>
                     <div className="boxImage">
                       <Image className='imm' src={menu.urlImage} width={100} height={100} alt='kansha hibachi' />
                     </div>
@@ -186,7 +186,7 @@ const BoxMenu: React.FC = () => {
               <h1 className="title">SUSHI ROLL</h1>
               {sushi.map((menu: getMenuProps) => (
                 <>
-                  <div className="box" key={menu.id} onClick={() => handleModal(menu.slug, menu.id, menu.name, parseFloat(menu.price))}>
+                  <div className="box" key={menu.id} onClick={() => handleModal(menu.id)}>
                     <div className="boxImage">
                       <Image className='imm' src={menu.urlImage} width={100} height={100} alt='kansha hibachi' />
                     </div>
