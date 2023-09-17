@@ -9,11 +9,11 @@ import { getMenuProps } from '../../types/types';
 
 const BoxMenu: React.FC = () => {
   const searchContext: any = useContext(SearchContext);
-  const setQuerySearch = searchContext.setQuerySearch;
+  // const setQuerySearch = searchContext.setQuerySearch;
   const querySearch = searchContext.querySearch;
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const [openModal, setOpenModal] = useState(false);
-  const [propSlug, setPropSlug] = useState('')
+  // const [propSlug, setPropSlug] = useState('')
   const [propId, setPropId] = useState('');
   const [limit, setLimit] = useState("");
   const [hibachi, setHibachi] = useState([]);
@@ -27,6 +27,7 @@ const BoxMenu: React.FC = () => {
   const getMenuHibachi = async () => {
     const response = await axios.get(`${process.env.NEXT_PUBLIC_PRODUCT_PER_CATEGORY}search_query=2&page=${page}&limit=${limit}`)
     setHibachi(response.data.result);
+    console.log('first', page)
   }
 
   const getMenuSushi = async () => {
@@ -63,17 +64,16 @@ const BoxMenu: React.FC = () => {
     getMenuBentoBox();
   }, []);
 
-  type ModalType = {
-    slug: string,
-    id: any,
-    name: string,
-    price: number
-  }
+  // type ModalType = {
+  //   slug: string,
+  //   id: any,
+  //   name: string,
+  //   price: number
+  // }
 
   const handleModal = (slug: string, id: any, name: string, price: number) => {
     // const handleModal = ({ slug, id, name, price }: ModalType) => {
     setOpenModal(true);
-    setPropSlug(slug);
     setPropId(id);
   }
 
