@@ -10,6 +10,7 @@ const BannerHero: React.FC = () => {
   return (
     <section className="hero" style={{ backgroundImage: "url(" + "/images/banner_bg.jpg" + ")" }}>
       <div className="container">
+
         <div className="img-overlay">
           <span className="banner_shape_1">
             <Image src="/images/tree_5.png" width={200} height={200} alt="Kansha Hibachi Express" className="img-fluid w-100" />
@@ -30,8 +31,8 @@ const BannerHero: React.FC = () => {
             <Image src="/images/tree_2.png" width={200} height={200} alt="Kansha Hibachi Express" className="img-fluid w-100" />
           </span>
         </div>
-        <div className="banner-hero">
 
+        <div className="banner-hero">
           <div className="col-left" >
             <motion.h3
               initial={{ opacity: 1, x: -200 }}
@@ -78,9 +79,8 @@ const BannerHero: React.FC = () => {
                 </p>
               </div>
             </motion.div>
-
-
           </div>
+
           <div className="col-right">
             <motion.div
               initial={{ opacity: 0, scale: 0 }}

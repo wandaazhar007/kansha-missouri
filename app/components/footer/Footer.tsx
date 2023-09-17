@@ -104,9 +104,9 @@ const Footer: React.FC = () => {
           <div className="row">
             <div className="col-12">
               <div className="tf__footer_bottom_text">
-                <p>Copyright ©<b> 2023 Kansha Hibachi Express.</b> All Rights Reserved.</p>
+                {/* <p>Copyright ©<b> 2023 Kansha Hibachi Express.</b> All Rights Reserved.</p> */}
                 {/* <p>&copy; 2023 Kansha Hibachi Express. All rights reserved.</p> */}
-                {/* <p>Made with ❤️ by<b> <Link href="https://instagram.com/wanda_azharr/" target="_blank">Wanda Azhar</Link> </b> © 2023 in Michigan, USA 🇺🇸</p> */}
+                <p>Made with ❤️ by<b> <Link href="https://wandaazhar.vercel.app/" target="_blank">Wanda Azhar</Link> </b> © 2023 in Michigan, USA 🇺🇸</p>
               </div>
             </div>
           </div>
