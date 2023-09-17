@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useState } from "react";
 import axios from "axios";
 import ModalProduct from '../modalProduct/ModalProduct';
-// import { SearchContext } from '@/app/context/SearchContext';
 import { SearchContext } from '../../../context/SearchContext'
+import { getMenuProps } from '../../types/types';
 
 const SearchMenu: React.FC = () => {
   const searchContext: any = useContext(SearchContext);
@@ -60,7 +60,7 @@ const SearchMenu: React.FC = () => {
               (<>
                 {isLoading &&
                   <div className="content">
-                    {menus.map((menu: any, index) => (
+                    {menus.map((menu: getMenuProps, index) => (
                       <div className="box" key={menu.id}>
                         <div className="skeleton box-images-skeleton">
                         </div>
@@ -83,7 +83,7 @@ const SearchMenu: React.FC = () => {
                       <button onClick={handleReset}>{querySearch} <FontAwesomeIcon icon={faClose} className='icon' /> </button>
                     </div>
                     <div className="content">
-                      {menus.map((menu: any, index) => (
+                      {menus.map((menu: getMenuProps, index) => (
                         <>
                           <div className="box" key={menu.id} onClick={() => handleModal(menu.id, menu.name, parseFloat(menu.price))}>
                             <div className="box-images">

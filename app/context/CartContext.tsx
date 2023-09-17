@@ -20,7 +20,7 @@ export function CartProvider({ children }: any) {
   let cartFromLocalStorage = [];
   // useEffect(() => {
   if (typeof window !== 'undefined') {
-    cartFromLocalStorage = JSON.parse(localStorage.getItem('cart_kansha' || '[]') || "");
+    cartFromLocalStorage = JSON.parse(localStorage.getItem('cart_kansha' || '[]'));
     console.log(cartFromLocalStorage);
 
   }

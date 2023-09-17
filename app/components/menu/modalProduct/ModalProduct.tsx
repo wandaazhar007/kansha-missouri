@@ -10,8 +10,9 @@ import { CartContext } from "../../../context/CartContext";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from "react-toastify";
+import { openModalTypes } from '../../types/types';
 
-const ModalProduct = ({ openModal, closeModal, propId }: any) => {
+const ModalProduct = ({ openModal, closeModal, propId }: openModalTypes) => {
   if (!openModal) return null;
 
   const [isLoading, setIsLoading] = useState(true);
