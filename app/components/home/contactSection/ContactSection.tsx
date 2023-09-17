@@ -4,6 +4,7 @@ import { faCommentAlt, faEnvelope, faHome, faMap, faPhone, faSquareArrowUpRight 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { motion } from "framer-motion";
+
 const ContactSection: React.FC = () => {
   return (
     <section className="contact-section">
