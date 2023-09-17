@@ -9,11 +9,8 @@ import { getMenuProps } from '../../types/types';
 
 const BoxMenu: React.FC = () => {
   const searchContext: any = useContext(SearchContext);
-  // const setQuerySearch = searchContext.setQuerySearch;
   const querySearch = searchContext.querySearch;
-  // const [isLoading, setIsLoading] = useState(true);
   const [openModal, setOpenModal] = useState(false);
-  // const [propSlug, setPropSlug] = useState('')
   const [propId, setPropId] = useState(0);
   const [limit, setLimit] = useState("");
   const [hibachi, setHibachi] = useState([]);
