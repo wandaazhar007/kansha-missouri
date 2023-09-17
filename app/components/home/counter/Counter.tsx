@@ -1,5 +1,6 @@
 'use client'
 import { motion } from "framer-motion";
+
 const Counter: React.FC = () => {
   return (
     <section className="tf__counter" style={{ backgroundImage: "url(" + "/images/counter_bg.jpg" + ")", marginTop: '80px' }}>
