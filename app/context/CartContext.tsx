@@ -5,8 +5,8 @@ import { createContext, useEffect, useState } from "react";
 export const CartContext = createContext({
   items: [],
   getProductQuantity: () => { },
-  addOneToCart: () => { },
-  removeOneFromCart: () => { },
+  addOneToCart: (id: number, name: string, price: number) => { },
+  removeOneFromCart: (id: number) => { },
   deleteFromCart: () => { },
   getTotalCost: () => { }
 });

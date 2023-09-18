@@ -18,7 +18,7 @@ const ModalProduct = ({ openModal, closeModal, propId }: openModalTypes) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingBtn, setIsLoadingBtn] = useState(true);
   const [nameProduct, setNameProduct] = useState('');
-  const [price, setPrice] = useState('');
+  const [price, setPrice] = useState(0);
   const [desc, setDesc] = useState('');
   const [urlImage, setUrlImage] = useState('');
 
@@ -67,7 +67,10 @@ const ModalProduct = ({ openModal, closeModal, propId }: openModalTypes) => {
     getProductById();
   }, [])
 
-
+  const handleClick = (id: number, nameProduct: string, price: number) => {
+    cart.addOneToCart(id, nameProduct, price);
+    notify();
+  }
   const handleClick2 = () => {
     setIsLoadingBtn(false)
     setTimeout(() => {
@@ -114,7 +117,8 @@ const ModalProduct = ({ openModal, closeModal, propId }: openModalTypes) => {
                 <p className="desc-detail-product">{desc}</p>
               </div>
               <div className="modal-footer">
-                <button className="add-to-cart" onClick={() => handleClick2()}>
+                {/* <button className="add-to-cart" onClick={() => handleClick2()}> */}
+                <button className="add-to-cart" onClick={() => handleClick(propId, nameProduct, price)}>
                   {isLoadingBtn ? (
                     <>
                       <FontAwesomeIcon icon={faCartPlus} className="icon" />
