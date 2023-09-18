@@ -26,7 +26,7 @@ const SearchMenu: React.FC = () => {
     }, 1000)
   }
 
-  const handleSearch = (e: any) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuerySearch(e.target.value);
     setIsLoading(true);
     getSearch();

@@ -21,7 +21,7 @@ export function CartProvider({ children }: any) {
   // useEffect(() => {
   if (typeof window !== 'undefined') {
     cartFromLocalStorage = JSON.parse(localStorage.getItem('cart_kansha' || '[]'));
-    console.log(cartFromLocalStorage);
+    // console.log(cartFromLocalStorage);
 
   }
   // }, []);

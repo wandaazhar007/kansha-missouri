@@ -3,12 +3,12 @@ export type getMenuProps = {
   name: string,
   slug: string,
   desc: string,
-  price: any,
+  price: number,
   urlImage: string
 }
 
 export type openModalTypes = {
-  openModal: any,
+  openModal: boolean,
   closeModal: any,
-  propId: any
+  propId: number
 }

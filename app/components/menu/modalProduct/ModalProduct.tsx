@@ -13,7 +13,7 @@ import { ToastContainer } from "react-toastify";
 import { openModalTypes } from '../../types/types';
 
 const ModalProduct = ({ openModal, closeModal, propId }: openModalTypes) => {
-  if (!openModal) return null;
+  if (!openModal) return <></>;
 
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingBtn, setIsLoadingBtn] = useState(true);
@@ -23,6 +23,7 @@ const ModalProduct = ({ openModal, closeModal, propId }: openModalTypes) => {
   const [urlImage, setUrlImage] = useState('');
 
   const cart = useContext(CartContext);
+
 
   const getProductById = async () => {
     const response = await axios.get(`${process.env.NEXT_PUBLIC_PRODUCT_ALL}${propId}`);
@@ -68,8 +69,16 @@ const ModalProduct = ({ openModal, closeModal, propId }: openModalTypes) => {
 
 
   const handleClick2 = () => {
-    notifyMaintenance();
+    setIsLoadingBtn(false)
+    setTimeout(() => {
+      setIsLoadingBtn(true)
+      notifyMaintenance();
+    }, 500)
   }
+
+
+
+
   return (
     <>
       <div className="modal-product">
@@ -111,7 +120,7 @@ const ModalProduct = ({ openModal, closeModal, propId }: openModalTypes) => {
                       <FontAwesomeIcon icon={faCartPlus} className="icon" />
                       Add To Cart
                     </>
-                  ) : 'loading..'}
+                  ) : 'Loading..'}
                 </button>
                 <button className="close-btn-2" onClick={closeModal}>
                   <FontAwesomeIcon icon={faClose} className="icon" />

@@ -24,7 +24,7 @@ const BoxMenu: React.FC = () => {
   const getMenuHibachi = async () => {
     const response = await axios.get(`${process.env.NEXT_PUBLIC_PRODUCT_PER_CATEGORY}search_query=2&page=${page}&limit=${limit}`)
     setHibachi(response.data.result);
-    console.log('first', page)
+    // console.log('first', page)
   }
 
   const getMenuSushi = async () => {
@@ -60,13 +60,6 @@ const BoxMenu: React.FC = () => {
     getMenuAddOns();
     getMenuBentoBox();
   }, []);
-
-  // type ModalType = {
-  //   slug: string,
-  //   id: any,
-  //   name: string,
-  //   price: number
-  // }
 
   const handleModal = (id: number) => {
     // const handleModal = ({ slug, id, name, price }: ModalType) => {
