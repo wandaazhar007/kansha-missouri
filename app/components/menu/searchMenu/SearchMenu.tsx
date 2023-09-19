@@ -106,8 +106,10 @@ const SearchMenu: React.FC = () => {
           </div>
         </div>
       </section>
-
-      <ModalProduct openModal={openModal} closeModal={() => setOpenModal(false)} propId={propId} />
+      {openModal ? (
+        <ModalProduct openModal={openModal} closeModal={() => setOpenModal(false)} propId={propId} />
+      ) : (<></>)}
+      {/* <ModalProduct openModal={openModal} closeModal={() => setOpenModal(false)} propId={propId} /> */}
     </>
   );
 }

@@ -13,7 +13,8 @@ import { ToastContainer } from "react-toastify";
 import { openModalTypes } from '../../types/types';
 
 const ModalProduct = ({ openModal, closeModal, propId }: openModalTypes) => {
-  if (!openModal) return <></>;
+  // if (!openModal) return <></>;
+
 
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingBtn, setIsLoadingBtn] = useState(true);
@@ -23,8 +24,8 @@ const ModalProduct = ({ openModal, closeModal, propId }: openModalTypes) => {
   const [urlImage, setUrlImage] = useState('');
 
   const cart = useContext(CartContext);
-
-
+  // if (!openModal) return <></>;
+  console.log('first', propId)
   const getProductById = async () => {
     const response = await axios.get(`${process.env.NEXT_PUBLIC_PRODUCT_ALL}${propId}`);
 

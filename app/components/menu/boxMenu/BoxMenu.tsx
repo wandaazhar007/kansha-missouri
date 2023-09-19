@@ -10,7 +10,7 @@ import { getMenuProps } from '../../types/types';
 const BoxMenu: React.FC = () => {
   const searchContext: any = useContext(SearchContext);
   const querySearch = searchContext.querySearch;
-  const [openModal, setOpenModal] = useState(false);
+  const [openModal, setOpenModal] = useState<any>(false);
   const [propId, setPropId] = useState(0);
   const [limit, setLimit] = useState("");
   const [hibachi, setHibachi] = useState([]);
@@ -196,7 +196,11 @@ const BoxMenu: React.FC = () => {
 
       </div>
 
-      <ModalProduct openModal={openModal} closeModal={() => setOpenModal(false)} propId={propId} />
+      {/* {openModal && <ModalProduct openModal={openModal} closeModal={() => setOpenModal(false)} propId={propId} />} */}
+      {openModal ? (
+        <ModalProduct openModal={openModal} closeModal={() => setOpenModal(false)} propId={propId} />
+      ) : (<></>)}
+      {/* <ModalProduct openModal={openModal} closeModal={() => setOpenModal(false)} propId={propId} /> */}
     </>
   );
 }
