@@ -7,8 +7,8 @@ export const CartContext = createContext({
   getProductQuantity: () => { },
   addOneToCart: (id: number, name: string, price: number) => { },
   removeOneFromCart: (id: number) => { },
-  deleteFromCart: () => { },
-  getTotalCost: () => { }
+  deleteFromCart: (id: number) => { },
+  getTotalCost: (): any => { return 0 }
 });
 
 
@@ -20,7 +20,7 @@ export function CartProvider({ children }: any) {
   let cartFromLocalStorage = [];
   // useEffect(() => {
   if (typeof window !== 'undefined') {
-    cartFromLocalStorage = JSON.parse(localStorage.getItem('cart_kansha' || '[]'));
+    cartFromLocalStorage = JSON.parse(localStorage.getItem('cart_kansha' || []));
     // console.log(cartFromLocalStorage);
 
   }
@@ -46,10 +46,10 @@ export function CartProvider({ children }: any) {
     return quantity;
   }
 
-  function addOneToCart(id: number, name: string, price: number) {
+  function addOneToCart(id: number, productName: string, price: number) {
     const quantity = getProductQuantity(id);
     if (quantity === 0) {
-      setCartProducts([...cartProducts, { id: id, name: name, price: price, quantity: 1 }]);
+      setCartProducts([...cartProducts, { id: id, productName: productName, price: price, quantity: 1 }]);
     } else {
       setCartProducts(cartProducts.map((product: any) => product.id === id ? { ...product, quantity: product.quantity + 1 } : product));
     }

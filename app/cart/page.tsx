@@ -15,7 +15,7 @@ const CartPage: React.FC = () => {
   const [valueCustomTip, setValueCustumTip] = useState(0);
   const [showCustomTip, setShowCustomTip] = useState(false);
   const cart = useContext(CartContext);
-  const productsCount = cart.items?.reduce((sum, product) => sum + product.quantity, 0);
+  const productsCount = cart.items?.reduce((sum, product: any) => sum + product.quantity, 0);
   const tipValue = (cart.getTotalCost().toFixed(2) / 100 * tip).toFixed(2);
 
   const handleTip = (value: any) => {
@@ -89,7 +89,7 @@ const CartPage: React.FC = () => {
               </div>
               {showCustomTip ? (
                 <div className="custom-tip">
-                  <input type="number" placeholder="type your tip here..." className="input-tip" value={valueCustomTip} onChange={(e) => setValueCustumTip(e.target.value)} />
+                  <input type="number" placeholder="type your tip here..." className="input-tip" value={valueCustomTip} onChange={(e: any) => setValueCustumTip(e.target.value)} />
                   <button className="btn-custom-tip" onClick={() => handleAddCustomTip()}>Add</button>
                 </div>
               ) : ''}

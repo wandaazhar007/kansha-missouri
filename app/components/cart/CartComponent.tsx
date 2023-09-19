@@ -15,9 +15,9 @@ const CartComponent = ({ id, quantity }: any) => {
 
   const getProductData = async (id: number) => {
     // const response = await fetch('https://kanshaapi.birojasa-sahabat.com/all-products');
-    const response = await fetch(`${process.env.NEXT_PUBLIC_PRODUCT_ALL}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_PRODUCT_ALL_CART}`);
     const data = await response.json();
-    console.log('data', data)
+    // console.log('data', data)
     const productData = data.find((product: any) => product.id === id);
     return productData;
   }
