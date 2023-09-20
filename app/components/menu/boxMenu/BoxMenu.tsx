@@ -195,12 +195,10 @@ const BoxMenu: React.FC = () => {
         ) : ''}
 
       </div>
-
-      {/* {openModal && <ModalProduct openModal={openModal} closeModal={() => setOpenModal(false)} propId={propId} />} */}
-      {openModal ? (
+      {/* {openModal ? (
         <ModalProduct openModal={openModal} closeModal={() => setOpenModal(false)} propId={propId} />
-      ) : (<></>)}
-      {/* <ModalProduct openModal={openModal} closeModal={() => setOpenModal(false)} propId={propId} /> */}
+      ) : (<></>)} */}
+      {openModal && <ModalProduct openModal={openModal} closeModal={() => setOpenModal(false)} propId={propId} />}
     </>
   );
 }

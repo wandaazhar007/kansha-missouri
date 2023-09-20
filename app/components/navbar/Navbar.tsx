@@ -3,17 +3,16 @@ import { useState, useContext } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-// import { CartContext } from "@/app/context/CartContext";
-import { CartContext } from '../../context/CartContext'
+// import { CartContext } from '../../context/CartContext'
 
 
 const Navbar: React.FC = () => {
-  const cart = useContext(CartContext);
+  // const cart = useContext(CartContext);
   const pathname = usePathname();
   const [show, setShow] = useState(false);
   const [hideTopbar, setHideTopbar] = useState(false);
 
-  const productsCount = cart.items?.reduce((sum, product: any) => sum + product.quantity, 0);
+  // const productsCount = cart.items?.reduce((sum, product: any) => sum + product.quantity, 0);
 
   const changeTopbar = () => {
     // console.log(window.scrollY);
@@ -60,7 +59,7 @@ const Navbar: React.FC = () => {
             <li>
               <Link href="tel:+16604299074" target="_blank" rel="noreferrer"><i className="fas fa-phone"></i></Link>
             </li>
-            <li>
+            {/* <li>
               {productsCount > 0 ? (
                 <>
                   <Link href="/cart" onClick={(() => handleShow())}>
@@ -68,7 +67,7 @@ const Navbar: React.FC = () => {
                   </Link>
                 </>
               ) : '0'}
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

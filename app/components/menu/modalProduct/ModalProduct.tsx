@@ -6,16 +6,13 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useContext } from "react";
-import { CartContext } from "../../../context/CartContext";
+// import { CartContext } from "../../../context/CartContext";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from "react-toastify";
 import { openModalTypes } from '../../types/types';
 
 const ModalProduct = ({ openModal, closeModal, propId }: openModalTypes) => {
-  // if (!openModal) return <></>;
-
-
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingBtn, setIsLoadingBtn] = useState(true);
   const [nameProduct, setNameProduct] = useState('');
@@ -23,8 +20,7 @@ const ModalProduct = ({ openModal, closeModal, propId }: openModalTypes) => {
   const [desc, setDesc] = useState('');
   const [urlImage, setUrlImage] = useState('');
 
-  const cart = useContext(CartContext);
-  // if (!openModal) return <></>;
+  // const cart = useContext(CartContext);
   console.log('first', propId)
   const getProductById = async () => {
     const response = await axios.get(`${process.env.NEXT_PUBLIC_PRODUCT_ALL}${propId}`);

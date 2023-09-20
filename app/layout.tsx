@@ -16,7 +16,7 @@ import { Inter } from 'next/font/google'
 import Topbar from './components/topbar/Topbar'
 import Navbar from './components/navbar/Navbar'
 import Footer from './components/footer/Footer'
-import CartProvider from './context/CartContext'
+// import CartProvider from './context/CartContext'
 import SearchProvider from './context/SearchContext'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -27,20 +27,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <CartProvider>
-        <SearchProvider>
-          <body className={inter.className}>
-            <Topbar />
-            <header>
-              <Navbar />
-            </header>
-            <main>
-              {children}
-            </main>
-            <Footer />
-          </body>
-        </SearchProvider>
-      </CartProvider>
+      {/* <CartProvider> */}
+      <SearchProvider>
+        <body className={inter.className}>
+          <Topbar />
+          <header>
+            <Navbar />
+          </header>
+          <main>
+            {children}
+          </main>
+          <Footer />
+        </body>
+      </SearchProvider>
+      {/* </CartProvider> */}
     </html>
   )
 }
