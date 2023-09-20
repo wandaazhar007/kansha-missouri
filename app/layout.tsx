@@ -12,7 +12,7 @@ import '../public/css/terms-conditions.css'
 import '../public/css/login.css'
 import '../public/css/responsive2.css'
 import '../public/css/venobox.min.css'
-import { Inter } from 'next/font/google'
+// import { Inter } from 'next/font/google'
 import Topbar from './components/topbar/Topbar'
 import Navbar from './components/navbar/Navbar'
 import Footer from './components/footer/Footer'
@@ -21,7 +21,7 @@ import SearchProvider from './context/SearchContext'
 import Script from 'next/script'
 import GoogleAnalytics from './components/GoogleAnalytics'
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 export default function RootLayout({
   children,
 }: {
@@ -29,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Script>
+      <Script id="gtm-script" strategy="afterInteractive">
         {`
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -41,7 +41,8 @@ export default function RootLayout({
       <GoogleAnalytics GA_MEASUREMENT_ID='G-DH3PG8W6PJ' />
       {/* <CartProvider> */}
       <SearchProvider>
-        <body className={inter.className}>
+        {/* <body className={inter.className}> */}
+        <body >
           <Topbar />
           <header>
             <Navbar />
