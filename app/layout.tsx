@@ -39,8 +39,6 @@ export default function RootLayout({
         })(window,document,'script','dataLayer','GTM-KN442N46');
         `}
       </Script>
-      {/* <GoogleAnalytics GA_MEASUREMENT_ID='G-DH3PG8W6PJ' /> */}
-      {/* <GoogleAnalytics GA_MEASUREMENT_ID='G-FNFBCX240S' /> */}
       <GoogleAnalytics GA_MEASUREMENT_ID={`${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
       {/* <CartProvider> */}
       <SearchProvider>
