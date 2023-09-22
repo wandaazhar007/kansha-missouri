@@ -27,6 +27,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <html lang="en">
       <Script id="gtm-script" strategy="afterInteractive">
@@ -38,7 +39,9 @@ export default function RootLayout({
         })(window,document,'script','dataLayer','GTM-KN442N46');
         `}
       </Script>
-      <GoogleAnalytics GA_MEASUREMENT_ID='G-DH3PG8W6PJ' />
+      {/* <GoogleAnalytics GA_MEASUREMENT_ID='G-DH3PG8W6PJ' /> */}
+      {/* <GoogleAnalytics GA_MEASUREMENT_ID='G-FNFBCX240S' /> */}
+      <GoogleAnalytics GA_MEASUREMENT_ID={`${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
       {/* <CartProvider> */}
       <SearchProvider>
         {/* <body className={inter.className}> */}
@@ -51,6 +54,11 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+
+          <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN442N46"
+              height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe>
+          </noscript>
         </body>
       </SearchProvider>
       {/* </CartProvider> */}

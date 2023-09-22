@@ -5,7 +5,7 @@ import './bannerHero.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
-
+console.log('ga', process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID);
 const BannerHero: React.FC = () => {
   return (
     <section className="hero" style={{ backgroundImage: "url(" + "/images/banner_bg.jpg" + ")" }}>
