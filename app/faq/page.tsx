@@ -1,8 +1,8 @@
 import './faq.scss';
 
 export const metadata = {
-  title: 'About Kansha Hibachi Express',
-  description: 'CFind answers to your questions at Kansha Hibachi Express FAQ. Get insights on reservations, menu items, hibachi experience, and more. Your dining experience matters to us, and we are here to provide you with the information you need.',
+  title: 'We Answer some of your questions here',
+  description: 'Find answers to your questions at Kansha Hibachi Express FAQ. Get insights on reservations, menu items, hibachi experience, and more. Your dining experience matters to us, and we are here to provide you with the information you need.',
 }
 
 const FaqPage: React.FC = () => {

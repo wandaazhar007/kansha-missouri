@@ -36,10 +36,11 @@ export default function RootLayout({
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-KN442N46');
+        })(window,document,'script','dataLayer','GTM-PCJ4ZQDV');
         `}
       </Script>
-      <GoogleAnalytics GA_MEASUREMENT_ID={`${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} />
+      {/* <GoogleAnalytics GA_MEASUREMENT_ID={`${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`} /> */}
+      <GoogleAnalytics GA_MEASUREMENT_ID="G-W3PRFD6NV7" />
       {/* <CartProvider> */}
       <SearchProvider>
         {/* <body className={inter.className}> */}
@@ -54,7 +55,7 @@ export default function RootLayout({
           <Footer />
 
           <noscript>
-            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN442N46"
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCJ4ZQDV"
               height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe>
           </noscript>
         </body>
